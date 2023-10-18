@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="720.0" prefWidth="1089.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main_code.ContactController">
+   <top>
+      <fx:include prefHeight="35.0" prefWidth="1089.0" source="menubar.fxml" />
+   </top>
+   <center>
+      <AnchorPane prefHeight="690.0" prefWidth="1089.0" styleClass="root" stylesheets="@contact-view.css">
+         <children>
+            <SplitPane dividerPositions="0.49402023919043236" prefHeight="690.0" prefWidth="1089.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+              <items>
+                <AnchorPane styleClass="root">
+                     <children>
+                        <Label fx:id="labelToPrint" alignment="CENTER" layoutX="123.0" layoutY="82.0" styleClass="label_head" text="LISTE DES ETUDIANTS" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="50.0">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableStudent" accessibleRole="IMAGE_VIEW" layoutX="31.0" layoutY="230.0" onMouseClicked="#getItem" prefHeight="336.0" prefWidth="472.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="230.0">
+                          <columns>
+                            <TableColumn fx:id="Nom" maxWidth="-1.0" minWidth="120.0" prefWidth="120.0" text="Nom" />
+                            <TableColumn fx:id="Prenom" maxWidth="-1.0" minWidth="120.0" prefWidth="120.0" text="Prénom" />
+                              <TableColumn fx:id="DOB" maxWidth="-1.0" minWidth="240.0" prefWidth="240.0" text="Date de naissance" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="33.0" layoutY="157.0" prefHeight="28.0" prefWidth="470.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="157.0">
+                           <children>
+                              <Label prefHeight="29.0" prefWidth="100.0" text="Nom et Prenom: ">
+                                 <font>
+                                    <Font name="Arial Narrow" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="searchFull" depthTest="ENABLE" onAction="#handleSearch" onTouchPressed="#handleSearch" prefHeight="35.0" prefWidth="250.0" promptText="Enter nom ou prenom ..." HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="printButton" layoutX="195.0" layoutY="592.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="Imprimer" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="592.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane styleClass="root">
+                     <children>
+                        <Label layoutX="156.0" layoutY="75.0" prefHeight="47.0" prefWidth="286.0" styleClass="label_head" text="DETAILS DE CONTACT" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="51.0">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="40.0" layoutY="200.0" prefHeight="262.0" prefWidth="442.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="200.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="162.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="280.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="162.0" styleClass="label_nom" text="Nom: " textAlignment="RIGHT">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="163.0" styleClass="label_nom" text="Prénom: " textAlignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="49.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="162.0" styleClass="label_nom" text="Date de naissance: " textAlignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="163.0" styleClass="label_nom" text="Adresse: " textAlignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="162.0" styleClass="label_nom" text="Email: " textAlignment="RIGHT" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="BOTTOM_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="162.0" styleClass="label_nom" text="Numero de tel: " textAlignment="RIGHT" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="Email1" alignment="CENTER" prefHeight="32.0" prefWidth="272.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" />
+                              <TextField fx:id="Tel1" alignment="CENTER" prefHeight="32.0" prefWidth="272.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
+                              <TextField fx:id="Adresse1" alignment="CENTER" prefHeight="32.0" prefWidth="272.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                              <TextField fx:id="DOB1" alignment="CENTER" prefHeight="32.0" prefWidth="272.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                              <TextField fx:id="prenom1" alignment="CENTER" prefHeight="32.0" prefWidth="272.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                              <TextField fx:id="nom1" alignment="CENTER" prefHeight="32.0" prefWidth="272.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                           </children>
+                        </GridPane>
+                        <ButtonBar cache="true" depthTest="DISABLE" layoutX="46.0" layoutY="542.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="41.0" prefWidth="472.0" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="542.0">
+                          <buttons>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteContact" prefHeight="30.0" prefWidth="197.0" text="Supprimer">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="CLOSE" selectionEnd="0" selectionStart="0" strokeWidth="0.0" text="" textAlignment="CENTER" />
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addContact" prefHeight="30.0" prefWidth="100.0" text="Ajouter">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="PLUS" />
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#modifyContact" prefHeight="30.0" prefWidth="100.0" text="Modifier">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="EDIT" onDragDetected="#modifyContact" selectionEnd="0" selectionStart="0" />
+                                 </graphic>
+                              </Button>
+                          </buttons>
+                        </ButtonBar>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

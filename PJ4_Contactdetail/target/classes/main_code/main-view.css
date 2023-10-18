@@ -1,0 +1,26 @@
+/* Style for background calculator */
+.root {
+    -fx-background-color:
+            linear-gradient(from 930px 00px to 00px 00px, #D3D3D3, #008080),
+            linear-gradient(from 30px 900px to 00px 00px, #008080, #D3D3D3);
+    -fx-background-radius: 2px;
+}
+
+/*Style for the button*/
+.menu-bar {
+    -fx-font-size: 16px;
+    -fx-font-family: "Calibri";
+
+    -fx-background-color:
+            linear-gradient(from 30px 390px to 00px 00px, #D3D3D3, #008080),
+            linear-gradient(from 30px 290px to 00px 00px, #008080, #D3D3D3);
+    -fx-background-radius: 2px;
+}
+.menu-bar:hover {
+    -fx-background-color:
+            linear-gradient(from 0px 0px to 0px 60px, #D3D3D3, #008080),
+            linear-gradient(from 0px 0px to 0px 60px, #008080, #D3D3D3);
+}
+
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main_code.MainController">
+   <center>
+      <AnchorPane fx:id="mainPane1" minWidth="1089.0" prefHeight="35.0" prefWidth="1089.0" snapToPixel="false" styleClass="root" stylesheets="@main-view.css">
+         <children>
+            <ImageView fitHeight="680.0" fitWidth="1101.0" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@network.jpg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <fx:include minWidth="1089.0" prefHeight="35.0" prefWidth="1089.0" source="menubar.fxml" />
+   </top>
+</BorderPane>
